@@ -3,6 +3,7 @@ package com.springapi.springboottaskapp.mapper.impl;
 import com.springapi.springboottaskapp.domain.CreateTaskRequest;
 import com.springapi.springboottaskapp.domain.dto.CreateTaskRequestDto;
 import com.springapi.springboottaskapp.domain.dto.TaskDto;
+import com.springapi.springboottaskapp.domain.dto.UpdateTaskRequestDto;
 import com.springapi.springboottaskapp.domain.entity.Tasks;
 import com.springapi.springboottaskapp.mapper.TaskMapper;
 import jakarta.validation.Valid;
@@ -17,6 +18,17 @@ public class taskMapperImpl implements TaskMapper {
                 dto.description(),
                 dto.dueDate(),
                 dto.priority()
+        );
+    }
+
+    @Override
+    public UpdateTaskRequestDto fromDto(UpdateTaskRequestDto dto) {
+        return new UpdateTaskRequestDto(
+                dto.title(),
+                dto.description(),
+                dto.dueDate(),
+                dto.priority(),
+                dto.taskStatus()
         );
     }
 
