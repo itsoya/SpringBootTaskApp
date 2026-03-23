@@ -40,7 +40,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Tasks> getAllTasks() {
+    public List<Tasks> listTasks() {
         return taskRepository.findAll(Sort.by(Sort.Direction.ASC, "created"));
     }
 
@@ -57,5 +57,10 @@ public class TaskServiceImpl implements TaskService {
         task.setUpdated(Instant.now());
 
         return taskRepository.save(task);
+    }
+
+    @Override
+    public void deleteTask(UUID taskId) {
+        taskRepository.deleteById(taskId);
     }
 }

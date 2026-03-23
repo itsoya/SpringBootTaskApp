@@ -28,7 +28,7 @@ public class taskMapperImpl implements TaskMapper {
                 dto.description(),
                 dto.dueDate(),
                 dto.priority(),
-                dto.taskStatus()
+                dto.status()
         );
     }
 
