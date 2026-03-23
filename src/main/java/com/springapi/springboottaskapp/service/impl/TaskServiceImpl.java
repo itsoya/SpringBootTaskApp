@@ -45,7 +45,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Tasks updateTask(UUID taskId, @org.jetbrains.annotations.UnknownNullability UpdateTaskRequestDto request) {
+    public Tasks updateTask(UUID taskId,UpdateTaskRequestDto request) {
         Tasks task = taskRepository.findById(taskId)
                 .orElseThrow(() -> new TaskNotFoundException(taskId));
 
