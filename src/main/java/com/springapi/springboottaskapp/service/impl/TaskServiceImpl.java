@@ -1,7 +1,7 @@
 package com.springapi.springboottaskapp.service.impl;
 
 import com.springapi.springboottaskapp.domain.CreateTaskRequest;
-import com.springapi.springboottaskapp.domain.UpdateTaskRequest;
+import com.springapi.springboottaskapp.domain.dto.UpdateTaskRequestDto;
 import com.springapi.springboottaskapp.domain.entity.Tasks;
 import com.springapi.springboottaskapp.domain.entity.TaskStatus;
 import com.springapi.springboottaskapp.exception.TaskNotFoundException;
@@ -45,7 +45,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Tasks updateTask(UUID taskId, UpdateTaskRequest request) {
+    public Tasks updateTask(UUID taskId, @org.jetbrains.annotations.UnknownNullability UpdateTaskRequestDto request) {
         Tasks task = taskRepository.findById(taskId)
                 .orElseThrow(() -> new TaskNotFoundException(taskId));
 
