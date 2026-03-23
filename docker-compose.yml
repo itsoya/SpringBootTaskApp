@@ -1,0 +1,11 @@
+name: springboot-task-app
+services:
+  ui:
+    image: ghcr.io/devtiro/devtiro-build-task-app:main
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_HOST=host.docker.internal
+      - BACKEND_PORT=8080
+    extra_hosts:
+      - "host.dicker.internal:host-gateway"
